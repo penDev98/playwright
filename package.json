@@ -1,12 +1,13 @@
 {
-  "name": "playwright-api",
+  "name": "playwright-microservice",
   "private": true,
-  "type": "module",
-  "scripts": {
-    "start": "node server.js"
-  },
+  "engines": { "node": ">=18" },
   "dependencies": {
-    "express": "^4.19.2",
-    "playwright": "^1.47.2"
+    "playwright": "^1.47.2",
+    "express": "^4.19.2"
+  },
+  "scripts": {
+    "postinstall": "npx playwright install --with-deps chromium",
+    "start": "node server.js"
   }
 }
